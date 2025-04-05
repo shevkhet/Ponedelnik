@@ -1,0 +1,28 @@
+body {
+    background-color: whitesmoke ;
+}
+
+.webtitle {
+    width: 100%;
+    border: solid 1px red;
+    text-align: center;
+    height: auto; /* à ajuster*/
+    margin: Opx;
+    padding: 0px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+nav {
+    display: block;
+}
+
+.navlink {
+    display: inline-block;
+}
+
+.navlink a {
+    text-decoration: none;
+}
