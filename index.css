@@ -1,14 +1,16 @@
 body {
-    background-color: whitesmoke ;
+    background-color: rgb(255, 248, 234) ;
 }
 
 .webtitle {
+    display: flex;
     width: 100%;
-    border: solid 1px red;
-    text-align: center;
-    height: auto; /* à ajuster*/
-    margin: Opx;
-    padding: 0px;
+    height: 42px; /* à ajuster*/
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,255,255);
+    /*border: solid 1px red;*/ /* à ajuster*/
+    letter-spacing: 3px;
 }
 
 h1 {
@@ -17,7 +19,13 @@ h1 {
 
 nav {
     display: flex;
+    height: 35px;
     align-items: center;
+    justify-content: center;
+    border-top: 1px gray solid;
+    border-bottom: 1px gray solid;
+    margin: 0px;
+    background-color: rgb(255,255,255);
 }
 
 .navlink {
@@ -26,4 +34,8 @@ nav {
 
 .navlink a {
     text-decoration: none;
+}
+
+li {
+    margin: 0px 10px;
 }
