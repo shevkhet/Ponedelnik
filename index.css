@@ -61,7 +61,7 @@ main {
     font-optical-sizing: auto;
     font-size: 38px;
     font-weight: 300;
-    font-style: normal;
+    font-style: italic;
     font-variation-settings:
       "wdth" 100;
     margin-bottom: 5px;
@@ -71,19 +71,32 @@ main {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: x-large;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
+.keep_reading {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: large;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: black;
+}
+
 .minor_article {
     display: flex;
-    /*border: 1px solid red;*/
     border-radius: 8px;
     height: 172px;
     gap : 25px
 }
 
 .m1_article {
+    display: flex;
+    flex-direction: column;
     background-color: rgb(255,255,255);
     border: 2px solid blue;
     border-radius: 8px;
@@ -98,4 +111,40 @@ main {
     border-radius: 8px;
     padding: 10px;
     width: 50%;
+}
+
+.m3_article {
+    background-color: rgb(255,255,255);
+    border: 2px solid orange;
+    border-radius: 8px;
+    padding: 10px;
+    width: 50%;
+}
+
+.minor_title {
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    margin-bottom: 5px;
+}
+
+.minor_subtitle {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.minor_date {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: small;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }

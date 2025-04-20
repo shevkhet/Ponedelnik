@@ -1,0 +1,111 @@
+body {
+    background-color: rgb(255, 248, 234) ;
+    margin: 0;
+}
+
+.webtitle {
+    display: flex;
+    width: 100%;
+    height: 42px; /* à ajuster*/
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,255,255);
+    /*border: solid 1px red;*/ /* à ajuster*/
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px gray solid;
+    border-bottom: 1px gray solid;
+    margin: 0px;
+    background-color: rgb(255,255,255);
+}
+
+.navlink {
+    display: inline-block;
+}
+
+.navlink a {
+    text-decoration: none;
+}
+
+li {
+    margin: 0px 10px;
+}
+
+main {
+    margin: 35px 120px;
+}
+
+.part_title {
+    
+}
+
+.part_books {
+    display: flex;
+    flex-direction: column;
+    /*border: 2px solid blue;*/
+
+}
+
+.current_reading {
+    display: flex;
+    height: 120px;
+    margin: 10px 0px;
+    background-color: rgb(255,255,255);
+}
+
+.previous_reading {
+    display: flex;
+    height: 120px;
+    border-top: solid 1px grey;
+    border-bottom: solid 1px grey;
+    margin: 10px 0px;
+    background-color: rgb(255,255,255);
+}
+
+.book_picture {
+    border: solid 1px black;
+    margin: 10px 5px;
+    height: 100px;
+    width: 100px;
+}
+
+.book_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 1px black;
+    height: 100px;
+    width: 100%;
+    margin: 10px 10px;
+}
+
+.book_title {
+    margin: 0px 0px;
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    margin-bottom: 5px;
+}
+
+.book_author {
+    margin: 0px 0px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
