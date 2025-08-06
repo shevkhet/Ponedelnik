@@ -1,11 +1,21 @@
-for (var i = 0; i < document.querySelectorAll(".navlink").length; i ++) {
-    document.querySelectorAll(".navlink")[i].addEventListener("mouseover", function(){
-        this.classList.add("pressed");
-    })
-    document.querySelectorAll(".navlink")[i].addEventListener("mouseleave", function(){
-        this.classList.remove("pressed");
-    })
-}
+import express from 'express';
 
+const app = express();
+const port = 3000;
+
+
+app.use(express.static("public")); // permet de cibler le dossier des éléments statiques (css...)
+
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
+
+app.get("/meslectures", (req, res) => {
+  res.render("myreadings.ejs");
+})
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 
 
