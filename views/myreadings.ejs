@@ -44,38 +44,54 @@
                 <div class="grid-header status notside">Statut</div>
                 <div class="grid-header dateBegin notside">Début</div>
                 <div class="grid-header dateEnd notside">Fin</div>
-                <div class="grid-header price">Prix</div>
+                <div class="grid-header dateEnd"><em>A définir</em></div>
             </div>
-            <div class="bookList">
-                <div class="grid-header title notside">Les enfants de minuit</div>
-                <div class="grid-header author notside">Salman Rushdie</div>
-                <div class="grid-header type notside">Roman</div>
-                <div class="grid-header edition notside">Actes Sud Editions</div>
-                <div class="grid-header status notside">A lire</div>
-                <div class="grid-header dateBegin notside">01/01/2025</div>
-                <div class="grid-header dateEnd notside">31/01/2025</div>
-                <div class="grid-header price">12.5</div>
-            </div>
-            <div class="bookList">
-                <div class="grid-header title notside">Icare</div>
-                <div class="grid-header author notside">Jirô Taniguchi</div>
-                <div class="grid-header type notside">Manga</div>
-                <div class="grid-header edition notside">Made In</div>
-                <div class="grid-header status notside">Terminé</div>
-                <div class="grid-header dateBegin notside">01/08/2025</div>
-                <div class="grid-header dateEnd notside">02/08/2025</div>
-                <div class="grid-header price">10.0</div>
-            </div>
-            <div class="bookList">
-                <div class="grid-header title notside">La Métamorphone</div>
-                <div class="grid-header author notside">Franz Kafka</div>
-                <div class="grid-header type notside">Roman</div>
-                <div class="grid-header edition notside">Folio</div>
-                <div class="grid-header status notside">En cours</div>
-                <div class="grid-header dateBegin notside">01/07/2025</div>
-                <div class="grid-header dateEnd notside"></div>
-                <div class="grid-header price">8.0</div>
+            <% for( let index = 0; index < numberBooks; index++ ) { %>
+                <div class="bookList">
+                    <div class="grid-header title notside"> <%= resultList[index].title %> </div>
+                    <div class="grid-header author notside"> <%= resultList[index].author %> </div>
+                    <div class="grid-header type notside"> <%= resultList[index].type %> </div>
+                    <div class="grid-header edition notside"> <%= resultList[index].editor %> </div>
+                    <div class="grid-header status notside"> <%= resultList[index].status %> </div>
+                    <div class="grid-header dateBegin notside"> <%= resultList[index].dateBegin %> </div>
+                    <div class="grid-header dateEnd notside"> <%= resultList[index].dateEnd %> </div>
+                    <div class="grid-header dateEnd"> <em> A définir</em> </div>
+                </div>
+            <% } %>
+            <div class ="bookAdd">
+                <form class="grid-newPage">
+                    <button id="addRow" type="button"><img id="icon" src="/pictures/plus.svg" alt="Ajouter" class="icon"></button>
+                    <span id="iconLabel">Ajouter une nouvelle entrée</span>
+                </form>
+                <div class="grid-total totalRead"> <%= numberBooks %> books</div>
             </div>
         </main>
     </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <script>
+        $("#addRow").on("click", function() {
+            const inputRow = $(`
+                <form class="bookList">
+                    <div class="grid-header title notside"> <input type="text" name="title" placeholder="Titre" >  </div>
+                    <div class="grid-header author notside"> <input type="text" name="autor" placeholder="Auteur">  </div>
+                    <div class="grid-header type notside"> <input type="text" name ="type" placeholder="Type d'ouvrage">  </div>
+                    <div class="grid-header edition notside"> <input type="text" name="editor" placeholder="Editeur">  </div>
+                    <div class="grid-header status notside"> <input type="text" name="status" placeholder="Progression">  </div>
+                    <div class="grid-header dateBegin notside"> <input type="text" name="dateBegin" placeholder="01/01/2025">  </div>
+                    <div class="grid-header dateEnd notside"> <input type="text" name="date_end"placeholder="31/12/2025"> </div>
+                    <div class="grid-header dateEnd"> <em> A définir</em> </div>
+                </form>
+            `)
+            .insertBefore(".bookAdd")           // Ajoute juste avant .bookAdd
+            .find('input[name="title"]')        // Cherche le champ titre
+            .trigger('focus');                  // ajoute autofocus
+            
+            $("#icon")                          // modifie l'icône de sauvegarde
+            .attr("src", "/pictures/record-circle.svg")
+            .attr("alt", "Enregistrer");
+
+            $("#iconLabel").html("Enregistrer une nouvelle entrée");
+        })
+    </script>
 </html>

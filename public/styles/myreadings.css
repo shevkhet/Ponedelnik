@@ -48,7 +48,7 @@ li {
 .bookList {
     display: grid;
     grid-template-rows: 32px;
-    grid-template-columns: auto 160px 118px 220px 120px 105px 105px 90px;
+    grid-template-columns: 350px 220px 160px 180px 120px 105px 105px auto;
 }
 
 .grid-header {
@@ -64,4 +64,65 @@ li {
 
 .notside {
     border-right: 1px solid gray;
+}
+
+.bookAdd {
+    display: grid;
+    grid-template-rows: 32px;
+    grid-template-columns: 350px auto;
+}
+
+.grid-total {
+    display: flex;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    font-size: 14px;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    justify-content: right;
+    padding-left: 10px;
+}
+
+.grid-newPage {
+    padding: 0px;
+    margin-left: 0px;
+    display: flex;
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    font-size: 14px;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    justify-content: left;
+    padding-left: 10px;
+}
+
+.icon {
+    color: gray;
+    border: 2px solid grey;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+button {
+    padding: 0px;
+    margin-left: 0px;
+    margin-top: 2px;
+    background-color: transparent;
+    border: none; 
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+}
+
+input {
+    padding: 0px;
+    margin-left: 0px;
+    margin-top: 2px;
+    background-color: transparent;
+    border: none; 
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
 }
