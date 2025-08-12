@@ -126,3 +126,14 @@ input {
     outline: none;
     overflow: hidden;
 }
+
+.bookForm {
+    display: grid;
+    grid-template-rows: 32px;
+    grid-auto-rows: 32px;
+    grid-template-columns: 350px 220px 160px 180px 120px 105px 105px auto;
+}
+
+.final {
+    grid-column: 1 / -1;
+}

@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 const db = new pg.Client({
@@ -43,8 +44,6 @@ async function readingList() {
   return {readList, numberBooks}
 }
 
-
-
 app.get("/", (req, res) => {
   res.render("index.ejs");
 });
@@ -61,4 +60,6 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-
+app.post("/add", (req,res) => {
+  console.log(req.body)
+})

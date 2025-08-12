@@ -59,10 +59,10 @@
                 </div>
             <% } %>
             <div class ="bookAdd">
-                <form class="grid-newPage">
+                <div class="grid-newPage">
                     <button id="addRow" type="button"><img id="icon" src="/pictures/plus.svg" alt="Ajouter" class="icon"></button>
                     <span id="iconLabel">Ajouter une nouvelle entrée</span>
-                </form>
+                </div>
                 <div class="grid-total totalRead"> <%= numberBooks %> books</div>
             </div>
         </main>
@@ -71,8 +71,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
     <script>
         $("#addRow").on("click", function() {
+             $(".bookAdd").hide();
             const inputRow = $(`
-                <form class="bookList">
+                <form class="bookForm" action="/add" method="post">
                     <div class="grid-header title notside"> <input type="text" name="title" placeholder="Titre" >  </div>
                     <div class="grid-header author notside"> <input type="text" name="autor" placeholder="Auteur">  </div>
                     <div class="grid-header type notside"> <input type="text" name ="type" placeholder="Type d'ouvrage">  </div>
@@ -81,6 +82,10 @@
                     <div class="grid-header dateBegin notside"> <input type="text" name="dateBegin" placeholder="01/01/2025">  </div>
                     <div class="grid-header dateEnd notside"> <input type="text" name="date_end"placeholder="31/12/2025"> </div>
                     <div class="grid-header dateEnd"> <em> A définir</em> </div>
+                    <div class="grid-newPage final">
+                        <button id="addRow" type="submit"><img id="icon" src="/pictures/plus.svg" alt="Ajouter" class="icon"></button>
+                        <span id="iconLabel">Ajouter une nouvelle entrée</span>
+                    </div>
                 </form>
             `)
             .insertBefore(".bookAdd")           // Ajoute juste avant .bookAdd
