@@ -116,13 +116,19 @@ button {
     overflow: hidden;
 }
 
+.grid-header input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: inherit;
+    font-family: inherit;
+}
+
 input {
     padding: 0px;
     margin-left: 0px;
     margin-top: 2px;
     background-color: transparent;
     border: none; 
-    cursor: pointer;
     outline: none;
     overflow: hidden;
 }
