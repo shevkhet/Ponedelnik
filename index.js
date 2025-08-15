@@ -36,6 +36,7 @@ async function readingList() {
   console.log(result.rows);
   
   let readList = result.rows.map(book => ({
+    id: book.id,
     title: book.title,
     author: book.author,
     editor: book.editor,

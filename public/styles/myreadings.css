@@ -121,6 +121,7 @@ button {
     box-sizing: border-box;
     font-size: inherit;
     font-family: inherit;
+    padding-left: 2px;
 }
 
 input {

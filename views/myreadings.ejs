@@ -55,7 +55,9 @@
                     <div class="grid-header status notside"> <%= resultList[index].status %> </div>
                     <div class="grid-header dateBegin notside"> <%= resultList[index].dateBegin %> </div>
                     <div class="grid-header dateEnd notside"> <%= resultList[index].dateEnd %> </div>
-                    <div class="grid-header dateEnd"> <em> A définir</em> </div>
+                    <div class="grid-header editButton"> 
+                        <button id="editRow <%= resultList[index].id %>" type="button"><img id="icon" src="/pictures/pencil.svg"></button>
+                    </div>
                 </div>
             <% } %>
             <div class ="bookAdd">
@@ -98,5 +100,14 @@
 
             $("#iconLabel").html("Enregistrer une nouvelle entrée");
         })
+    </script>
+    <script>
+        $(document).on("mouseenter", ".editButton img", function() {
+            $(this).attr("src", "/pictures/pencil-fill.svg"); // icône au survol
+        });
+
+        $(document).on("mouseleave", ".editButton img", function() {
+            $(this).attr("src", "/pictures/pencil.svg"); // revient à l'icône crayon
+        });
     </script>
 </html>
