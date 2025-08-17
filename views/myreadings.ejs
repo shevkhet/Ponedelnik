@@ -44,21 +44,25 @@
                 <div class="grid-header status notside">Statut</div>
                 <div class="grid-header dateBegin notside">Début</div>
                 <div class="grid-header dateEnd notside">Fin</div>
-                <div class="grid-header dateEnd"><em>A définir</em></div>
+                <div class="grid-header toDefine"></div>
+                <div class="grid-header btnColumn"><em>A définir</em></div>
             </div>
             <% for( let index = 0; index < numberBooks; index++ ) { %>
-                <div class="bookList">
-                    <div class="grid-header title notside"> <%= resultList[index].title %> </div>
-                    <div class="grid-header author notside"> <%= resultList[index].author %> </div>
-                    <div class="grid-header type notside"> <%= resultList[index].type %> </div>
-                    <div class="grid-header edition notside"> <%= resultList[index].editor %> </div>
-                    <div class="grid-header status notside"> <%= resultList[index].status %> </div>
-                    <div class="grid-header dateBegin notside"> <%= resultList[index].dateBegin %> </div>
-                    <div class="grid-header dateEnd notside"> <%= resultList[index].dateEnd %> </div>
-                    <div class="grid-header editButton"> 
-                        <button id="editRow <%= resultList[index].id %>" type="button"><img id="icon" src="/pictures/pencil.svg"></button>
+                <form class="bookList" id="row<%= resultList[index].id %>" value = resultList[index].id action="/edit" method="post">
+                    <div class="grid-row notside" id="title<%= resultList[index].id %>"> <%= resultList[index].title %> </div>
+                    <div class="grid-row notside" id="author<%= resultList[index].id %>"> <%= resultList[index].author %> </div>
+                    <div class="grid-row notside" id="type<%= resultList[index].id %>"> <%= resultList[index].type %> </div>
+                    <div class="grid-row notside" id="editor<%= resultList[index].id %>"><%= resultList[index].editor %> </div>
+                    <div class="grid-row notside" id="status<%= resultList[index].id %>"> <%= resultList[index].status %> </div>
+                    <div class="grid-row notside" id="dateBegin<%= resultList[index].id %>"> <%= resultList[index].dateBegin %> </div>
+                    <div class="grid-row notside" id="dateEnd<%= resultList[index].id %>"> <%= resultList[index].dateEnd %> </div>
+                    <div class="grid-row editButton" action="/edit" method="post"> 
+                        <button class="btn" id="editRow<%= resultList[index].id %>" type="button">
+                            <img id="iconPencil<%= resultList[index].id %>" src="/pictures/pencil.svg">
+                        </button>
                     </div>
-                </div>
+                    <div class="grid-row toDefine">A définir</div>
+                </form>
             <% } %>
             <div class ="bookAdd">
                 <div class="grid-newPage">
@@ -70,44 +74,7 @@
         </main>
     </body>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
-    <script>
-        $("#addRow").on("click", function() {
-             $(".bookAdd").hide();
-            const inputRow = $(`
-                <form class="bookForm" action="/add" method="post">
-                    <div class="grid-header title notside"> <input type="text" name="title" placeholder="Titre" >  </div>
-                    <div class="grid-header author notside"> <input type="text" name="author" placeholder="Auteur">  </div>
-                    <div class="grid-header type notside"> <input type="text" name ="type" placeholder="Type d'ouvrage">  </div>
-                    <div class="grid-header edition notside"> <input type="text" name="editor" placeholder="Editeur">  </div>
-                    <div class="grid-header status notside"> <input type="text" name="status" placeholder="Progression">  </div>
-                    <div class="grid-header dateBegin notside"> <input type="text" name="dateBegin" placeholder="01/01/2025">  </div>
-                    <div class="grid-header dateEnd notside"> <input type="text" name="dateEnd"placeholder="31/12/2025"> </div>
-                    <div class="grid-header dateEnd"> <em> A définir</em> </div>
-                    <div class="grid-newPage final">
-                        <button id="addRow" type="submit"><img id="icon" src="/pictures/plus.svg" alt="Ajouter" class="icon"></button>
-                        <span id="iconLabel">Ajouter une nouvelle entrée</span>
-                    </div>
-                </form>
-            `)
-            .insertBefore(".bookAdd")           // Ajoute juste avant .bookAdd
-            .find('input[name="title"]')        // Cherche le champ titre
-            .trigger('focus');                  // ajoute autofocus
-            
-            $("#icon")                          // modifie l'icône de sauvegarde
-            .attr("src", "/pictures/record-circle.svg")
-            .attr("alt", "Enregistrer");
-
-            $("#iconLabel").html("Enregistrer une nouvelle entrée");
-        })
-    </script>
-    <script>
-        $(document).on("mouseenter", ".editButton img", function() {
-            $(this).attr("src", "/pictures/pencil-fill.svg"); // icône au survol
-        });
-
-        $(document).on("mouseleave", ".editButton img", function() {
-            $(this).attr("src", "/pictures/pencil.svg"); // revient à l'icône crayon
-        });
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/dom_myreadings.js"></script>
+    
 </html>

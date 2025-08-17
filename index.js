@@ -85,3 +85,8 @@ app.post("/add", async (req,res) => {
     console.log(error);
   };
 });
+
+app.post("/edit", async(req, res) => {
+  console.log(req.data);
+})
+

@@ -48,10 +48,21 @@ li {
 .bookList {
     display: grid;
     grid-template-rows: 32px;
-    grid-template-columns: 350px 220px 160px 180px 120px 105px 105px auto;
+    grid-template-columns: 350px 220px 160px 180px 120px 105px 105px 30px auto; /*to adjust*/
 }
 
 .grid-header {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    font-size: 14px;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    justify-content: left;
+    padding-left: 10px;
+}
+
+.grid-row {
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 550;
@@ -98,7 +109,7 @@ li {
     padding-left: 10px;
 }
 
-.icon {
+.pencilIcon {
     color: gray;
     border: 2px solid grey;
     border-radius: 50%;
@@ -116,7 +127,7 @@ button {
     overflow: hidden;
 }
 
-.grid-header input {
+.grid-row input {
     width: 100%;
     box-sizing: border-box;
     font-size: inherit;
