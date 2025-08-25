@@ -157,8 +157,5 @@ li {
 
 .pressed {
     background-color: grey;
-  }
+  };
 
-.grid-row.editing {
-  background-color: red;
-}

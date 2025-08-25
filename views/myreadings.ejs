@@ -12,7 +12,7 @@
             Ponedelnik
         </title>
         <div class="webtitle">
-            <h1>PONEDELNIK</h1>
+            <h1>TON BLOG LITTERAIRE</h1>
         </div>
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
         <!--Navigation bar-->
         <nav>
             <ul>
-                <li class="navlink"><a href="">Ponedelnik</a></li>
+                <li class="navlink"><a href="">Ton blog littéraire</a></li>
                 <li class="navlink"><a href="">Mes lectures</a></li>
                 <li class="navlink"><a href="">Avis</a></li>
                 <li class="navlink"><a href="">Podcasts</a></li>
@@ -48,7 +48,7 @@
                 <div class="grid-header btnColumn"><em>A définir</em></div>
             </div>
             <% for( let index = 0; index < numberBooks; index++ ) { %>
-                <form class="bookList" id="row<%= resultList[index].id %>" value = resultList[index].id action="/edit" method="post">
+                <form class="bookList" id="row<%= resultList[index].id %>" action="/edit" method="post">
                     <div class="grid-row notside" id="title<%= resultList[index].id %>"> <%= resultList[index].title %> </div>
                     <div class="grid-row notside" id="author<%= resultList[index].id %>"> <%= resultList[index].author %> </div>
                     <div class="grid-row notside" id="type<%= resultList[index].id %>"> <%= resultList[index].type %> </div>
@@ -56,7 +56,7 @@
                     <div class="grid-row notside" id="status<%= resultList[index].id %>"> <%= resultList[index].status %> </div>
                     <div class="grid-row notside" id="dateBegin<%= resultList[index].id %>"> <%= resultList[index].dateBegin %> </div>
                     <div class="grid-row notside" id="dateEnd<%= resultList[index].id %>"> <%= resultList[index].dateEnd %> </div>
-                    <div class="grid-row editButton" action="/edit" method="post"> 
+                    <div class="grid-row editButton"> 
                         <button class="btn" id="editRow<%= resultList[index].id %>" type="button">
                             <img id="iconPencil<%= resultList[index].id %>" src="/pictures/pencil.svg">
                         </button>
